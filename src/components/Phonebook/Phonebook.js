@@ -24,6 +24,8 @@ class Phonebook extends Component {
       this.state.contacts.find(({ number }) => number === data.number)
     ) {
       alert(`${data.name} is already in your phonebook, bro!`);
+    } else if (!/\d{3}[-]\d{2}[-]\d{2}/g.test(data.number)) {
+      alert(`Enter valid number please`);
     } else {
       data.id = uuidv4();
       this.setState(({ contacts }) => ({

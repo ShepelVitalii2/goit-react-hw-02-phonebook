@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './ContactList.module.css';
+import { FaRegTimesCircle } from 'react-icons/fa';
 
 function ContactList({ contacts, onDeleteContacts }) {
   return (
@@ -15,7 +16,7 @@ function ContactList({ contacts, onDeleteContacts }) {
               type="button"
               onClick={() => onDeleteContacts(id)}
             >
-              Delete
+              <FaRegTimesCircle className={s.icon} />
             </button>
           </li>
         ))}
